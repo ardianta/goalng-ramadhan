@@ -49,7 +49,7 @@ func main(){
 			case "4":
 				fmt.Println("Menu 4. Ubah data dipilih")
 			case "5":
-				fmt.Println("Menu 5. Hapusdata dipilih")
+				fmt.Println("Menu 5. Hapus data dipilih")
 			case "0":
 				fmt.Println("Program Keluar!")
 			default:
@@ -60,3 +60,4 @@ func main(){
 		fmt.Println("⛔ Password dan username salah, coba lagi!")
 	}
 }
+
