@@ -18,7 +18,7 @@ Belajar dan latihan bahasa pemrograman Golang di Bulan Ramadhan 2023.
 - [x] Tipe Data
 - [x] Operator
 - [x] Control Flow: If (percabangan)
-- [ ] Control Flow: for (perulangan)
+- [x] Control Flow: for (perulangan)
 - [ ] Array di Golang
 - [ ] Fungsi
 - [ ] Struct
