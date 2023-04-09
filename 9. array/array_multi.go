@@ -1,14 +1,18 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"strconv"
+	"os"
+)
 
 	// CHALLENGE!
-	// 1. [ ] Buat kode untuk menampilkan saldo user
-	//    - [ ] input username dan pin, setelah itu tampilkan sisa saldo
+	// 1. [✅] Buat kode untuk menampilkan saldo user
+	//    - [✅] input username dan pin, setelah itu tampilkan sisa saldo
 	//          dari user yang sedang login (hint: pakai algo searcing)
-	// 2. [ ] Buat kode untuk top up saldo
-	// 3. [ ] Buat kode untuk tarik saldo
-	// +4. [ ] Buat kode buat ganti PIN
+	// 2. [✅] Buat kode untuk top up saldo
+	// 3. [✅] Buat kode untuk tarik saldo
+	// +4. [✅] Buat kode buat ganti PIN
 
 func main() {
 	var accounts = [3][3]string{
@@ -17,10 +21,10 @@ func main() {
 		{"petani", "123", "0"},
 	}
 
-	var username, pin string
-	var selectedMenu, currentUserIndex int;
-
+	var currentUserIndex int
+	
 	Auth: {
+		var username, pin string
 		fmt.Print("Enter Username: ")
 		fmt.Scanln(&username)
 		fmt.Print("Enter PIN: ")
@@ -34,10 +38,12 @@ func main() {
 				goto MainMenu
 			}
 		}
+		fmt.Println("⛔ username dan PIN salah")
 		goto Auth
 	}
 
 	MainMenu: {
+		var selectedMenu int
 		fmt.Println("------------------")
 		fmt.Println("🏧 GO Virtual ATM ")
 		fmt.Println("------------------")
@@ -61,7 +67,7 @@ func main() {
 			case 0:
 				goto Exit
 			default:
-				fmt.Println("Menu yang anda pilih salah!")
+				fmt.Println("⛔ Menu yang anda pilih salah!")
 				goto MainMenu
 		}
 	}
@@ -76,23 +82,56 @@ func main() {
 	}
 
 	TopUp: {
-		fmt.Println("TOP UP SALDO")
+		var topUpAmount int
+		fmt.Println("💵 Sisa saldo:", accounts[currentUserIndex][2])
+		fmt.Print("Top up amount: ")
+		fmt.Scanln(&topUpAmount)
+
+		currentBalance, _ := strconv.Atoi(accounts[currentUserIndex][2])
+		// top up balance
+		currentBalance += topUpAmount
+
+		// update user balance
+		accounts[currentUserIndex][2] = strconv.Itoa(currentBalance)
+
+		fmt.Println("✅ Saldo berhasil ditambah")
+
 		goto MainMenu // back to menu
 	}
 
 	TarikTunai: {
-		fmt.Println("Menu Tarik Tunai")
+		var withdrawAmount int
+		fmt.Println("💵 Sisa saldo:", accounts[currentUserIndex][2])
+		fmt.Print("Jumlah penarikan: ")
+		fmt.Scanln(&withdrawAmaount)
+
+		currentBalance, _ := strconv.Atoi(accounts[currentUserIndex][2])
+		if currentBalance > withdrawAmount {
+			currentBalance -= withdrawAmount
+			// update user balance
+			accounts[currentUserIndex][2] = strconv.Itoa(currentBalance)
+			fmt.Println("✅ Penarikan berhasil!")
+		} else {
+			fmt.Println("⛔ Saldo tidak cukup!")
+		}
+
 		goto MainMenu // back to menu
 	}
 
 	ChangePIN: {
-		fmt.Println("Menu Ubah PIN")
+		var newPIN string
+		fmt.Print("PIN baru: ")
+		fmt.Scanln(&newPIN)
+		accounts[currentUserIndex][1] = newPIN
+		fmt.Println("✅ PIN sudah diubah")
+		// Note: pin akan di reset ulang setelah program ditutup
+		// untuk improvement, simpan data ke dalam file atau database
+
 		goto MainMenu // back to menu
 	}
 
 	Exit: {
-		fmt.Println("Done, Terimakasih!")
+		fmt.Println("Done, Terimakasih! 👋 bye bye.")
+		os.Exit(0)
 	}
-
-
 }
