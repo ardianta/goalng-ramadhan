@@ -25,4 +25,8 @@ Belajar dan latihan bahasa pemrograman Golang di Bulan Ramadhan 2023.
 - [ ] Fungsi
 - [ ] Struct
 - [ ] Pointer
+- [ ] Gorountine
+- [ ] Channel
+- [ ] Mutex
+- [ ] Unit testing
 - [ ] ...
