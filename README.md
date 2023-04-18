@@ -21,13 +21,15 @@ Belajar dan latihan bahasa pemrograman Golang di Bulan Ramadhan 2023.
 - [x] Control Flow: for (perulangan)
 - [x] Array di Golang
 - [x] Slice
-- [ ] Map
-- [ ] Fungsi
+- [x] Map
+- [x] Fungsi
+- [x] Pointer
 - [ ] Struct
-- [ ] Pointer
-- [ ] Context
-- [ ] Gorountine
-- [ ] Channel
-- [ ] Mutex
-- [ ] Unit testing
+- [ ] Package
+- [ ] Simple Project 🏁
+- [ ] Advance: Context
+- [ ] Advance: Gorountine
+- [ ] Advance: Channel
+- [ ] Advance: Mutex
+- [ ] Advance: Unit testing
 - [ ] ...
