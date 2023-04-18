@@ -25,7 +25,9 @@ Belajar dan latihan bahasa pemrograman Golang di Bulan Ramadhan 2023.
 - [x] Fungsi
 - [x] Pointer
 - [ ] Struct
-- [ ] Package
+    - [ ] Method (Func in Struct)
+- [ ] Interface
+- [ ] Package (Export/Import)
 - [ ] Simple Project 🏁
 - [ ] Advance: Context
 - [ ] Advance: Gorountine
