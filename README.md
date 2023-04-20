@@ -24,10 +24,11 @@ Belajar dan latihan bahasa pemrograman Golang di Bulan Ramadhan 2023.
 - [x] Map
 - [x] Fungsi
 - [x] Pointer
-- [ ] Struct
+- [~] Struct (50%)
     - [ ] Method (Func in Struct)
+- [ ] Error Handling
 - [ ] Interface
-- [ ] Package (Export/Import)
+- [ ] Package (Export/Import) & Go mod
 - [ ] Simple Project 🏁
 - [ ] Advance: Context
 - [ ] Advance: Gorountine
